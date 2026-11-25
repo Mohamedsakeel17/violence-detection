@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ predict | upper }} Prediction</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    {% load static %}
+ 
+    <style>
+    
+body {
+    background-color: #eb9489; /* Background color for the entire page */
+}
+
+.container {
+    max-width: 900%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading Styles */
+h1 {
+    font-size: 2.5em;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.8em;
+    color: #555;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+/* Section Styles */
+.section {
+    margin-bottom: 20px;
+}
+
+/* Paragraph Styles */
+p {
+    font-size: 1.1em;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* List Styles */
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+ul li {
+    font-size: 1.1em;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+/* Link Styles */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    ul li {
+        font-size: 1em;
+    }
+}
+
+/* Card Container */
+.card {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Card Content */
+.card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Card Heading Style */
+.card-content h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+/* Image Style */
+.card-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+/* Card Title Style */
+.card-content .card-title {
+    font-size: 1.25rem;
+    color: #555;
+    font-weight: normal;
+}
+
+/* Responsive Design for Cards */
+@media (max-width: 600px) {
+    .card {
+        max-width: 90%;
+        padding: 15px;
+    }
+
+    .card-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .card-content .card-title {
+        font-size: 1rem;
+    }
+}
+
+/* Responsive Design for Nav */
+@media (max-width: 768px) {
+    nav .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar navbar-default navbar-static-top">
+          <div class="container">
+          <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation-nav">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            
+               <a class="navbar-brand" href="/" style="color: brown;">Welcome to {{ user.username.title|default:'Guest'}}</a>
+               
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+           
+      </header>
+      <!-- End Navbar -->
+<div class="container">
+
+    <div class="card">
+        <div class="card-content text-center">
+            
+            <img src="{{ obj.image.url }}" alt="Input Images" class="mb-4 mx-auto">
+            <h1 class="text-3xl font-bold mb-4">{{ predict | upper }}</h1>
+        </div>
+    </div>
+
+
+
+</div>
+</body>
+
+</html>
